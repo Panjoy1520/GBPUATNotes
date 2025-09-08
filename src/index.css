@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cardorange: #F99417;
+  --color-mainbg: #1D1616;
+  --color-cardgrey: #777777;
+}
+
+@keyframes timer {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.animate-timer {
+  animation: timer 5s linear forwards;
+}
+
+
+
+body{
+  background-color:  #1D1616;
+
+}
