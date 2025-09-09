@@ -22,6 +22,31 @@ export const initAuth = createAsyncThunk(
   }
 );
 
+//signup 
+
+export const signupUser = createAsyncThunk(
+  "auth/signupUser",
+  async ({ email, password }, { rejectWithValue }) => {
+    try {
+      // We call the createAccount service, which handles the entire signup flow
+      // (creating user, sending verification, and logging out).
+      const newAccount = await authService.createAccount(email, password);
+      
+      if (newAccount) {
+        // If signup is successful, we don't need to return user data because
+        // they still need to verify their email. We just return a success state.
+        return { success: true };
+      }
+
+    } catch (error) {
+      // If Appwrite throws an error (e.g., "A user with the same email already exists"),
+      // we catch it and send it as the payload for the rejected action.
+      console.log("Error in signupUser thunk:", error);
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 // login thunk where verification is also checked
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
@@ -34,8 +59,14 @@ export const loginUser = createAsyncThunk(
 
       // fetch user details
       const user = await authService.getcurrentUser();
-      console.log(user.email);
-      
+       if (!user) {
+        // If user is null, we can't proceed. Log out to be safe.
+        await authService.logout(); 
+        console.error("Login failed: Could not retrieve user session after login attempt.");
+        return rejectWithValue("Failed to retrieve user session.");
+      }
+
+      console.log("User successfully retrieved:", user.email);
 
       if (!user.emailVerification) {
         await authService.logout();
@@ -95,6 +126,21 @@ const authSlice = createSlice({
         state.user = null;
         state.isAuthenticated = false;
         state.error = action.payload === "NO_SESSION" ? null : action.payload;
+      });
+
+      //signup hi ni tha
+      builder
+      .addCase(signupUser.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(signupUser.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        
+      })
+      .addCase(signupUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload; 
       });
 
     // loginUser
