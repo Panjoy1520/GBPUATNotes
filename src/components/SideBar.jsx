@@ -20,7 +20,7 @@ export default function Sidebar({ isOpen }) {
           <Link to="/home/COF"><li className="cursor-pointer hover:text-orange-400">📙 COF</li></Link>        
           <Link to="/home/CoVaSc"><li className="cursor-pointer hover:text-orange-400">📙 CoVaSc</li></Link>
           <Link to="/home/CoCS"><li className="cursor-pointer hover:text-orange-400">📙 CoCS</li></Link>         
-          <Link to="/home/"><li className="cursor-pointer hover:text-orange-400">📙 COA</li></Link>      </ul>
+          <Link to="/home/COA"><li className="cursor-pointer hover:text-orange-400">📙 COA</li></Link>      </ul>
       </div>
 
       
