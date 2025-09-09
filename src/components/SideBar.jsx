@@ -15,13 +15,12 @@ export default function Sidebar({ isOpen }) {
 
         <h4 className="mt-8 text-sm text-gray-400">Colleges</h4>
         <ul className="space-y-4 mt-2">
-          <li className="cursor-pointer hover:text-orange-400">📙 COT </li>
-          <li className="cursor-pointer hover:text-orange-400">📙 CBSH</li>
-          <li className="cursor-pointer hover:text-orange-400">📙 COF</li>
-          <li className="cursor-pointer hover:text-orange-400">📙 CoVaSc</li>
-          <li className="cursor-pointer hover:text-orange-400">📙 CoCS</li>
-          <li className="cursor-pointer hover:text-orange-400">📙 COA</li>
-        </ul>
+          <Link to="/home/COT"><li className="cursor-pointer hover:text-orange-400">📙 COT </li></Link>       
+          <Link to ="/home/CBSH">  <li className="cursor-pointer hover:text-orange-400">📙 CBSH</li></Link>
+          <Link to="/home/COF"><li className="cursor-pointer hover:text-orange-400">📙 COF</li></Link>        
+          <Link to="/home/CoVaSc"><li className="cursor-pointer hover:text-orange-400">📙 CoVaSc</li></Link>
+          <Link to="/home/CoCS"><li className="cursor-pointer hover:text-orange-400">📙 CoCS</li></Link>         
+          <Link to="/home/COA"><li className="cursor-pointer hover:text-orange-400">📙 COA</li></Link>      </ul>
       </div>
 
       
