@@ -9,14 +9,14 @@ import CotPage from './pages/CotPage';
 import YearPage from './pages/YearPage';
 import CoursePage from './pages/CoursePage';
 import CourseFilespage from './pages/CourseFilespage';
-
+import Root from './components/Root';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <Routes>
      
-      <Route path="/" element={<Heropage />} />
+      <Route path="/" element={<Root />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/verify" element={<Verifypage />} />
 

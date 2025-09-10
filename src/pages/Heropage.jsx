@@ -1,6 +1,8 @@
 import React from "react";
 import admin_building from "../assets/admin_building.jpeg";
-
+import Home01 from "../assets/Home01.png";
+import Home02 from "../assets/Home02.png";
+import Home03 from "../assets/Home03.png";
 import HeroNav from "../components/Heronav/HeroNav";
 import { useNavigate } from "react-router-dom";
 
@@ -50,7 +52,7 @@ function Heropage() {
           {/* Step 1 */}
           <div className="flex flex-col md:flex-row items-center gap-8">
             <img
-              src="https://via.placeholder.com/200"
+              src={Home01}
               alt="step 1"
               className="w-48 h-48 object-cover rounded-lg shadow-lg"
             />
@@ -62,7 +64,7 @@ function Heropage() {
           {/* Step 2 */}
           <div className="flex flex-col md:flex-row items-center gap-8">
             <img
-              src="https://via.placeholder.com/200"
+              src={Home02}
               alt="step 2"
               className="w-48 h-48 object-cover rounded-lg shadow-lg"
             />
@@ -75,7 +77,7 @@ function Heropage() {
           {/* Step 3 */}
           <div className="flex flex-col md:flex-row items-center gap-8">
             <img
-              src="https://via.placeholder.com/200"
+              src={Home03}
               alt="step 3"
               className="w-48 h-48 object-cover rounded-lg shadow-lg"
             />
