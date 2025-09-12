@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import { useDispatch, useSelector } from "react-redux";
-import { initAuth, loginUser, selectAuth } from "../features/auth/authSlice";
+import { initAuth, loginUser, selectAuth,signupUser } from "../features/auth/authSlice";
 
 function LoginComponent() {
   const {
@@ -28,7 +28,7 @@ function LoginComponent() {
     dispatch(loginUser({email:data.email,password:data.password }))
       .unwrap()
       .then(() => {
-        navigate("/home"); 
+        navigate("/dashboard"); 
       })
       .catch((err) => {
         console.error("Login failed:", err);
