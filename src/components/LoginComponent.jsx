@@ -28,7 +28,7 @@ function LoginComponent() {
     dispatch(loginUser({email:data.email,password:data.password }))
       .unwrap()
       .then(() => {
-        navigate("/dashboard"); 
+        navigate("/home"); 
       })
       .catch((err) => {
         console.error("Login failed:", err);
