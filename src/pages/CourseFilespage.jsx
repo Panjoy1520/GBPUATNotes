@@ -55,6 +55,7 @@ function CourseFilesPage() {
                   <th className="px-6 py-3">File</th>
                   <th className="px-6 py-3">Uploaded At</th>
                   <th className="px-6 py-3">Uploader</th>
+                  <th className="px-6 py-3">Download</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,7 +85,7 @@ function CourseFilesPage() {
                         </a>
                       </td>
                       <td className="px-6 py-4 text-neutral-400">
-                        {new Date(file.$createdAt).toLocaleDateString()}
+                        {new Date(file.$createdAt).toLocaleDateString("en-IN")}
                       </td>
                       <td className="px-6 py-4 text-neutral-400">
                         {file.uploader || "Unknown"}
