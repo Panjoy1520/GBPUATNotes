@@ -7,7 +7,7 @@ export default function FolderCard({ icon, title,link }) {
       <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full">
         <img src={icon} alt={title} className="w-15 h-15 object-contain" />
       </div>
-      <span className="text-base font-medium text-gray-200">{title}</span>
+      <span className="text-base font-medium text-gray-200 line-clamp-3">{title}</span>
     </div>
     </Link>
   );
