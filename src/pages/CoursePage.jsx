@@ -30,7 +30,7 @@ function CoursePage() {
       <div className="flex flex-col flex-1">
         <main className="overflow-y-auto">
           <CardGrid
-            title={`courses for ${branchvalue} ${year}st year`}
+            title={`Courses for ${branchvalue} ${year}st year`}
             items={courseitems}
           />
         </main>
