@@ -16,7 +16,7 @@ function App() {
   return (
     <Routes>
      
-      <Route path="/" element={<Root />} />
+      <Route path="/" element={<Heropage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/verify" element={<Verifypage />} />
 
