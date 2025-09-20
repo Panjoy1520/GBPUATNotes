@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import courses from "../assets/courses";
 import service from "../appwrite/services";
@@ -14,9 +14,32 @@ function UploadForm() {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm();
+  } = useForm({defaultValues:{
+    college :"",
+    year:"",
+    branch:"",
+    course:"",
+    description:"",
+    file:null
+  }
+});
 
+  
   const selectedCollege = watch("college");
+
+  const availableBranches = useMemo(()=>{
+    if(!selectedCollege){
+      return []
+    }
+    const college = branches.find(
+      (c)=> c.college_value === selectedCollege
+    )
+    return college ? college.branches :[];
+
+  },[selectedCollege]
+);
+
+
 
   const onSubmit = async (data) => {
     try {
@@ -63,8 +86,8 @@ function UploadForm() {
                 Select College
               </option>
               {/* mapping on colleges array */}
-              {colleges.map((college, index) => (
-                <option key={index} value={college.college_value}>
+              {branches.map((college) => (
+                <option key={college.college_value} value={college.college_value}>
                   {college.college_name}
                 </option>
               ))}
@@ -125,7 +148,7 @@ function UploadForm() {
 
           {/* Branches Dropdown */}
 
-          {selectedCollege === "COT" && (
+          
             <div>
               <label className="block text-sm font-medium text-gray-300">
                 Branch
@@ -137,8 +160,8 @@ function UploadForm() {
                 <option value="" disabled selected hidden>
                   Select Branch
                 </option>
-                {branches.map((branch, index) => (
-                  <option key={index} value={branch.branch_value}>
+                {availableBranches.map((branch) => (
+                  <option key={branch.branch_value} value={branch.branch_value}>
                     {branch.branch_name}
                   </option>
                 ))}
@@ -147,7 +170,7 @@ function UploadForm() {
                 <p className="text-red-400 text-sm">{errors.course.message}</p>
               )}
             </div>
-          )}
+        
 
           {/* all Courses section */}
 
