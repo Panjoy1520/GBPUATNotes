@@ -8,8 +8,8 @@ export default function Sidebar({ isOpen }) {
     >
       <div>
         <ul className="space-y-4">
-          <li className="cursor-pointer hover:text-orange-400">🏠 Home</li>
-          <Link><li className="cursor-pointer hover:text-orange-400">❤️ Favourite</li></Link>
+          <Link to = '/home'><li className="cursor-pointer hover:text-orange-400 m-y-5">🏠 Home</li></Link>
+          <Link><li className="cursor-pointer hover:text-orange-400 gap-y-5">❤️ Favourite</li></Link>
           <Link to = "/home/uploadform"><li className="cursor-pointer hover:text-orange-400 py-4">⬆ Upload files</li></Link>
         </ul>
 

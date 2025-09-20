@@ -21,13 +21,15 @@ function UploadForm() {
   const onSubmit = async (data) => {
     try {
       console.log(data);
-
+      
       const uploadedfile = await service.uploadFile(data.file[0]);
       if (uploadedfile) {
         const fileId = uploadedfile.$id;
         data.image = fileId;
         const dbDoc = await service.createDocument({ ...data });
         console.log("successful");
+        console.log(data);
+        
 
         setShowPopup(true);
       } else {
@@ -169,6 +171,28 @@ function UploadForm() {
             </select>
             {errors.course && (
               <p className="text-red-400 text-sm">{errors.course.message}</p>
+            )}
+          </div>
+
+          {/* file description section  */}
+          <div>
+            <label className="block text-sm font-medium text-gray-300">
+              Description of file
+            </label>
+            <input
+              {...register("description", { required: "description is required" ,
+                maxLength:{
+                  value:30,
+                  message:"Description cannot exceed 30 letters"
+                },
+              })}
+              className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              type="text"
+              id="description"
+            />
+            
+            {errors.description && (
+              <p className="text-red-400 text-sm">{errors.description.message}</p>
             )}
           </div>
 
