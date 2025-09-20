@@ -2,24 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import authService from "../appwrite/auth";
 
-function Verifypage() {
-  const [params] = useSearchParams();
+function oAuthVerifypage() {
   const navigate = useNavigate();
   const [status, setStatus] = useState("verifying"); 
+  const email = 
 
-  const userId = params.get("userId");
-  const secret = params.get("secret");
-
+  
   useEffect(() => {
     async function verifyEmail() {
       try {
-        if (userId && secret) {
+        const user = await authService.getcurrentUser()
+
+        if (user.email === regex.test(email)) {
           await authService.completeVerification(userId, secret);
           setStatus("success");
 
           setTimeout(() => {
             navigate("/home");
-          }, 5000); //TODO: change the set timeout
+          }, 5000); 
         } else {
           setStatus("error");
         }
@@ -73,4 +73,4 @@ function Verifypage() {
   );
 }
 
-export default Verifypage;
+export default oAuthVerifypage;

@@ -3,7 +3,13 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import { useDispatch, useSelector } from "react-redux";
-import { initAuth, loginUser, selectAuth,signupUser } from "../features/auth/authSlice";
+import {
+  initAuth,
+  loginUser,
+  selectAuth,
+  signupUser,
+} from "../features/auth/authSlice";
+import authService from "../appwrite/auth";
 
 function LoginComponent() {
   const {
@@ -20,35 +26,24 @@ function LoginComponent() {
   const [isLogin, setIsLogin] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
 
-
-  
   const onSubmit = (data) => {
-    if (isLogin) {
-      
-      dispatch(loginUser({ email: data.email, password: data.password }))
-        .unwrap()
-        .then(() => {
-          
-          navigate("/home");
-        })
-        .catch((err) => {
-          
-          console.error("Login failed:", err);
-        });
-    } else {
-      
-      dispatch(signupUser({ email: data.email, password: data.password }))
-        .unwrap()
-        .then(() => {
-          
-          setShowPopup(true);
-         
-          setIsLogin(true);
-        })
-        .catch((err) => {
-         
-          console.error("Signup failed:", err);
-        });
+    console.log(data);
+
+    dispatch(loginUser({ email: data.email, password: data.password }))
+      .unwrap()
+      .then(() => {
+        navigate("/home");
+      })
+      .catch((err) => {
+        console.error("Login failed:", err);
+      });
+  };
+
+  const googleLogin = async () => {
+    try {
+      await authService.oAuth2Login();
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -156,7 +151,10 @@ function LoginComponent() {
         </div>
 
         {/* Google Button */}
-        <button className="w-full flex items-center justify-center space-x-2 border border-neutral-600 bg-neutral-700 py-2 px-4 rounded-md hover:bg-neutral-600 transition">
+        <button
+          className="w-full flex items-center justify-center space-x-2 border border-neutral-600 bg-neutral-700 py-2 px-4 rounded-md hover:bg-neutral-600 transition"
+          onClick={() => googleLogin()}
+        >
           <img
             src="https://www.svgrepo.com/show/475656/google-color.svg"
             alt="Google"

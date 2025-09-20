@@ -76,7 +76,6 @@ export class AuthService {
       console.log("Appwrite service :: getCurrentUser :: error", error);
       return null;
     }
-    
   }
 
   async logout() {
@@ -84,6 +83,18 @@ export class AuthService {
       await this.account.deleteSessions();
     } catch (error) {
       console.log("Appwrite service :: logout :: error", error);
+    }
+  }
+
+  async oAuth2Login() {
+    try {
+      this.account.createOAuth2Session(
+        "google",
+        "http://localhost:5173/verify",
+        "http://localhost:5173/failed"
+      );
+    } catch (error) {
+      console.log("Appwrite service :: oAuth2Login :: error", error);
     }
   }
 }

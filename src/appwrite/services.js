@@ -14,7 +14,7 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
-  async createDocument({ college, year, branch, course, image }) {
+  async createDocument({ college, year, branch, course, image,description }) {
     try {
       return await this.table.createRow({
         databaseId: envconfig.appwriteDatabaseId,
@@ -26,6 +26,7 @@ export class Service {
           branch,
           course,
           image,
+          description 
         },
       });
     } catch (error) {
