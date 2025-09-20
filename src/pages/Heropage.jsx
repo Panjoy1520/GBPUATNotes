@@ -36,9 +36,9 @@ function Heropage() {
             <span className="text-orange-400 font-bold">downloading</span> Notes
           </h1>
           <button 
-          onClick={()=>navigate("/login")}
+          onClick={()=>navigate("/home")}
           className="mt-6 bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg text-lg font-medium text-white shadow-lg">
-            Register Now
+            Get Started
           </button>
         </div>
       </div>
