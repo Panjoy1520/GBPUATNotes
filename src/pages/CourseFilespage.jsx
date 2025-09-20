@@ -61,7 +61,7 @@ function CourseFilesPage() {
                 {/* {console.log("files",files)
                 } */}
                 {files.map((file) => {
-                  const previewUrl = service.getFilePreview(file.image);
+                  const previewUrl = service.getFileView(file.image);
                   const downloadUrl = service.getFileDownload(file.image);
                   // console.log(previewUrl);
                   // console.log(downloadUrl);

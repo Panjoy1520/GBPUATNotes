@@ -103,9 +103,9 @@ export class Service {
     }
   }
 
-  getFilePreview(fileId) {
+  getFileView(fileId) {
     try {
-      return this.bucket.getFilePreview(envconfig.appwriteBucketId, fileId);
+      return this.bucket.getFileView(envconfig.appwriteBucketId, fileId);
     } catch (error) {
       console.log("Appwrite service :: getFilePreview :: error", error);
       
