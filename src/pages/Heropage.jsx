@@ -5,6 +5,7 @@ import Home02 from "../assets/Home02.png";
 import Home03 from "../assets/Home03.png";
 import HeroNav from "../components/Heronav/HeroNav";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Heropage() {
 
@@ -90,8 +91,8 @@ function Heropage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-neutral-800 text-white py-6 text-center">
-        <p className="opacity-50">Footer (coming soon)</p>
+      <footer >
+        <Footer/>
       </footer>
     </div>
   );

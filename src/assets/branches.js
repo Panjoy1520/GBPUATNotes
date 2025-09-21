@@ -2,13 +2,13 @@ const branches = [{
     college_value:"COT",
     college_name:"College of Technology",
     branches:[
-{branch_name:"Mechanical Engineering",branch_value:"ME"},
-{branch_name:"Electrical Engineering",branch_value:"EE"},
-{branch_name:"Civil Engineering",branch_value:"CE"},
-{branch_name:"Information Technology",branch_value:"IT"},
-{branch_name:"Agricultural Engineering",branch_value:"AE"},
-{branch_name:"Electronics and Communication Engineering",branch_value:"ECE"},
-{branch_name:"Computer Engineering",branch_value:"CSE"},
+            {branch_name:"Mechanical Engineering",branch_value:"ME"},
+            {branch_name:"Electrical Engineering",branch_value:"EE"},
+            {branch_name:"Civil Engineering",branch_value:"CE"},
+            {branch_name:"Information Technology",branch_value:"IT"},
+            {branch_name:"Agricultural Engineering",branch_value:"AE"},
+            {branch_name:"Electronics and Communication Engineering",branch_value:"ECE"},
+            {branch_name:"Computer Engineering",branch_value:"CSE"},
     {branch_name:"Industrial and Production Engineering",branch_value:"IPE"},
     ]},{
         college_value: "CBSH",
@@ -17,10 +17,10 @@ const branches = [{
             {branch_name:"CBSH ki koi Branch", branch_value:"CBSH1"}
         ]
     },{
-        college_value :"COVAS",
+        college_value :"CoVaSc",
         college_name : "College of Veterinary and Animal sciences",
         branches:[
-            {branch_name:"COVAS ki koi branch",branch_value:"COVAS1"}
+            {branch_name:"CoVaSc ki koi branch",branch_value:"CoVaSc1"}
         ]
     },{
         college_value:"COCS",

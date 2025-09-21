@@ -16,15 +16,17 @@ function HeroNav() {
           <a href="/" className="hover:text-orange-400">
             Home
           </a>
-          <a href="#about" className="hover:text-orange-400">
+          <a href="/about" className="hover:text-orange-400">
             About
           </a>
-          <a href="#contact" className="hover:text-orange-400">
+          <a href="/contactus" className="hover:text-orange-400">
             Contact
           </a>
+          <a href="/login">
           <button className="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-md font-medium">
             Sign in
           </button>
+          </a>
         </div>
       </nav>
   )
