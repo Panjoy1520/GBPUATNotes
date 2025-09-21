@@ -52,20 +52,10 @@ export class AuthService {
 
   async login(email, password) {
     try {
-      // await this.account.deleteSessions(); // Clear existing sessions
-      // Check if a session already exists
-      try {
-        const session = await this.account.get();
-        if (session) {
-          return session; // already logged in
-        }
-      } catch (error) {
-        throw error; // no existing session
-      }
-
       return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       console.log("Appwrite service :: login :: error", error);
+      throw error; // Re-throw the error for the UI to handle
     }
   }
 
