@@ -1,10 +1,11 @@
 import envconfig from "../envconfig/envconfig";
-import { Client, ID, TablesDB, Storage, Query } from "appwrite";
+import { Client, ID, TablesDB, Storage, Query,Functions} from "appwrite";
 
 export class Service {
   client = new Client();
   table;
   bucket;
+  Functions;
 
   constructor() {
     this.client
@@ -12,7 +13,21 @@ export class Service {
       .setProject(envconfig.appwriteProjectId);
     this.table = new TablesDB(this.client);
     this.bucket = new Storage(this.client);
+    this.Functions= new Functions(this.client);
   }
+
+   async executeContactFormFunction(formData) {
+    try {
+      return await this.functions.createExecution(
+        envconfig.appwriteFunctionId,
+        JSON.stringify(formData)
+      );
+    } catch (error) {
+      console.log("Appwrite service :: executeContactFormFunction :: error", error);
+      throw error; 
+    }
+  }
+
 
   async createDocument({ college, year, branch, course, image,description }) {
     try {

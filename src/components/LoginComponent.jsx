@@ -26,17 +26,26 @@ function LoginComponent() {
   const [isLogin, setIsLogin] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data);
-
-    dispatch(loginUser({ email: data.email, password: data.password }))
-      .unwrap()
-      .then(() => {
-        navigate("/home");
-      })
-      .catch((err) => {
-        console.error("Login failed:", err);
-      });
+ const onSubmit = (data) => {
+    if (isLogin) {
+      dispatch(loginUser({ email: data.email, password: data.password }))
+        .unwrap()
+        .then(() => {
+          navigate("/home"); 
+        })
+        .catch((err) => {
+          console.error("Login failed:", err);
+        });
+    } else {
+      dispatch(signupUser({ email: data.email, password: data.password }))
+        .unwrap()
+        .then(() => {
+          navigate("/home"); 
+        })
+        .catch((err) => {
+          console.error("Signup failed:", err);
+        });
+    }
   };
 
   const googleLogin = async () => {
