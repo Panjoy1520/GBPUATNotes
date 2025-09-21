@@ -11,6 +11,8 @@ import CoursePage from './pages/CoursePage';
 import CourseFilespage from './pages/CourseFilespage';
 import Root from './components/Root';
 import ProtectedRoute from './components/ProtectedRoute';
+import ContactUs from './pages/ContactUs';
+import AboutSection from './pages/About';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/home/:collegevalue/:branchvalue/:year/:courseCode" element={<CourseFilespage />} />
         <Route element={<ProtectedRoute />}>
         <Route path="/home/uploadform" element={<UploadForm />} />
+        <Route path='/contactus' element={<ContactUs/>}/>
+        <Route path='/about' element={<AboutSection/>}/>
         </Route>
       
       
