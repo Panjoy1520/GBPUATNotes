@@ -11,6 +11,8 @@ import {
 } from "../features/auth/authSlice";
 import authService from "../appwrite/auth";
 
+
+
 function LoginComponent() {
   const {
     register,
@@ -20,6 +22,8 @@ function LoginComponent() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const allowedDomain = "@gbpuat.ac.in"
 
   const { status, error, isAuthenticated, user } = useSelector(selectAuth);
 
@@ -84,6 +88,9 @@ function LoginComponent() {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "Please enter a valid Email",
                 },
+                validate: (value) =>
+                                    value.endsWith(allowedDomain) ||
+                                    `Only emails from ${allowedDomain} are allowed`,
               })}
               className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
