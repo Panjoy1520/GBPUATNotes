@@ -12,35 +12,39 @@ function UploadForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors ,isSubmitting},
     watch,
-  } = useForm({
-    defaultValues: {
-      college: "",
-      year: "",
-      branch: "",
-      course: "",
-      description: "",
-      file: null,
-    },
-  });
+  } = useForm({defaultValues:{
+    college :"",
+    year:"",
+    branch:"",
+    course:"",
+    description:"",
+    file:null
+  }
+});
 
+  
   const selectedCollege = watch("college");
-  const selectedYear = watch("year");
-  const selectedBranch = watch("branch");
 
-  const availableBranches = useMemo(() => {
-    if (!selectedCollege) {
-      return [];
+  const availableBranches = useMemo(()=>{
+    if(!selectedCollege){
+      return []
     }
-    const college = branches.find((c) => c.college_value === selectedCollege);
-    return college ? college.branches : [];
-  }, [selectedCollege]);
+    const college = branches.find(
+      (c)=> c.college_value === selectedCollege
+    )
+    return college ? college.branches :[];
+
+  },[selectedCollege]
+);
+
+
 
   const onSubmit = async (data) => {
     try {
       console.log(data);
-
+      
       const uploadedfile = await service.uploadFile(data.file[0]);
       if (uploadedfile) {
         const fileId = uploadedfile.$id;
@@ -48,6 +52,7 @@ function UploadForm() {
         const dbDoc = await service.createDocument({ ...data });
         console.log("successful");
         console.log(data);
+        
 
         setShowPopup(true);
       } else {
@@ -82,10 +87,7 @@ function UploadForm() {
               </option>
               {/* mapping on colleges array */}
               {branches.map((college) => (
-                <option
-                  key={college.college_value}
-                  value={college.college_value}
-                >
+                <option key={college.college_value} value={college.college_value}>
                   {college.college_name}
                 </option>
               ))}
@@ -119,7 +121,7 @@ function UploadForm() {
 
           {/* Branches Dropdown */}
 
-          {selectedCollege === "COT" && (
+            {selectedCollege === "COT" && (
             <div>
               <label className="block text-sm font-medium text-gray-300">
                 Branch
@@ -141,7 +143,8 @@ function UploadForm() {
                 <p className="text-red-400 text-sm">{errors.course.message}</p>
               )}
             </div>
-          )}
+            )
+}
 
           {/* all Courses section */}
 
@@ -156,18 +159,12 @@ function UploadForm() {
               <option value="" disabled selected hidden>
                 Select Course for which you want to upload
               </option>
-              {courses
-                .filter(
-                  (course) =>
-                    course.course_branch === selectedBranch &&
-                    course.course_year === selectedYear &&
-                    course.course_college === selectedCollege
-                )
-                .map((course, index) => (
-                  <option key={index} value={course.course_code}>
-                    {course.course_name}
-                  </option>
-                ))}
+              {courses.map((course, index) => (
+                <option key={index} value={course.course_code}>
+                  {course.course_name}
+                  {/* TODO: change this parameter when taking new data from courses */}
+                </option>
+              ))}
             </select>
             {errors.course && (
               <p className="text-red-400 text-sm">{errors.course.message}</p>
@@ -180,22 +177,19 @@ function UploadForm() {
               Description of file
             </label>
             <input
-              {...register("description", {
-                required: "description is required",
-                maxLength: {
-                  value: 50,
-                  message: "Description cannot exceed 50 letters",
+              {...register("description", { required: "description is required" ,
+                maxLength:{
+                  value:50,
+                  message:"Description cannot exceed 50 letters"
                 },
               })}
               className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
               type="text"
               id="description"
             />
-
+            
             {errors.description && (
-              <p className="text-red-400 text-sm">
-                {errors.description.message}
-              </p>
+              <p className="text-red-400 text-sm">{errors.description.message}</p>
             )}
           </div>
 
@@ -223,6 +217,7 @@ function UploadForm() {
           <div>
             <button
               type="submit"
+              disabled={isSubmitting}
               className="w-full bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition"
             >
               Upload
