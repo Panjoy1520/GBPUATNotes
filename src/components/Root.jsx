@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import authService from "../appwrite/auth";
 import UploadForm from "../pages/UploadForm";
 import LoginComponent from "./LoginComponent";
-import { div } from "motion/react-client";
 
 const Root = ()=>{
     const [status , setStatus] = useState('loading');
