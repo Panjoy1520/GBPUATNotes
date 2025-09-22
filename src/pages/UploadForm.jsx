@@ -121,7 +121,7 @@ function UploadForm() {
 
           {/* Branches Dropdown */}
 
-          
+            {selectedCollege === "COT" && (
             <div>
               <label className="block text-sm font-medium text-gray-300">
                 Branch
@@ -143,7 +143,8 @@ function UploadForm() {
                 <p className="text-red-400 text-sm">{errors.course.message}</p>
               )}
             </div>
-        
+            )
+}
 
           {/* all Courses section */}
 

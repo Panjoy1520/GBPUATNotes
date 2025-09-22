@@ -14,7 +14,7 @@ const branches = [{
         college_value: "CBSH",
         college_name: "College of Basic Science and Humanities",
         branches:[
-            {branch_name:"CBSH ki koi Branch", branch_value:"CBSH"}
+            {branch_name:"BioTechnology", branch_value:"BioTech"},
         ]
     },{
         college_value :"COVAS",
