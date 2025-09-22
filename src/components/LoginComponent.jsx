@@ -43,6 +43,7 @@ function LoginComponent() {
         .unwrap()
         .then(() => {
           navigate("/home");
+
         })
         .catch((err) => {
           console.error("Signup failed:", err);

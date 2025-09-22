@@ -1,5 +1,5 @@
 import React from "react";
-import admin_building from "../assets/admin_building.jpeg";
+import admin_building from "../assets/admin_building.webp";
 import Home01 from "../assets/Home01.png";
 import Home02 from "../assets/Home02.png";
 import Home03 from "../assets/Home03.png";
