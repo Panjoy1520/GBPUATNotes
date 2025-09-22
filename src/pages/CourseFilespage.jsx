@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../components/SideBar";
 import service from "../appwrite/services";
 import { Query } from "appwrite"; // Appwrite query builder
-import { FileText } from "lucide-react"; // nice file icon
+import { FileText } from "lucide-react"; 
 
 function CourseFilesPage() {
   const { collegevalue, branchvalue, year, courseCode } = useParams();
@@ -35,65 +35,56 @@ function CourseFilesPage() {
   }, [collegevalue, branchvalue, year, courseCode]);
 
   return (
-    <div className="flex bg-neutral-900 text-white min-h-screen">
-      <Sidebar />
-      <div className="flex flex-col flex-1 p-6">
-        <h1 className="text-2xl font-bold mb-6">
-          Files for {courseCode} ({branchvalue}
-          {year}nd year)
-        </h1>
+  <div className="flex bg-neutral-900 text-white min-h-screen">
+    <Sidebar />
+    <div className="flex flex-col flex-1 p-6">
+      <h1 className="text-2xl font-bold mb-6">
+        Files for {courseCode} ({branchvalue} {year} year)
+      </h1>
 
-        {loading ? (
-          <p>Loading files...</p>
-        ) : (
-          //   files.length === 0 ? )(
-          //   <p className="text-neutral-400">No files uploaded yet.</p>
-          <div className="bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
-            <table className="w-full border-collapse">
-              <thead className="bg-neutral-700 text-left text-sm uppercase text-neutral-300">
+      {loading ? (
+        <p>Loading files...</p>
+      ) : files.length === 0 ? (
+        <p className="text-neutral-400">No files uploaded yet.</p>
+      ) : (
+        <div className="bg-neutral-800 rounded-xl shadow-lg overflow-hidden">
+          {/* 📱 Make table horizontally scrollable on mobile */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm sm:text-base">
+              <thead className="bg-neutral-700 text-left uppercase text-neutral-300">
                 <tr>
-                  <th className="px-6 py-3">File</th>
-                  <th className="px-6 py-3">Uploaded At</th>
-                  <th className="px-6 py-3">Uploader</th>
-                  <th className="px-6 py-3">Download</th>
+                  <th className="px-4 sm:px-6 py-3">File</th>
+                  <th className="px-4 sm:px-6 py-3">Uploaded At</th>
+                  <th className="px-4 sm:px-6 py-3">Download</th>
                 </tr>
               </thead>
               <tbody>
-                {/* {console.log("files",files)
-                } */}
                 {files.map((file) => {
                   const previewUrl = service.getFileView(file.image);
                   const downloadUrl = service.getFileDownload(file.image);
-                  // console.log(previewUrl);
-                  // console.log(downloadUrl);
-                  
 
                   return (
                     <tr
                       key={file.$id}
                       className="border-b border-neutral-700 hover:bg-neutral-600/40 transition"
                     >
-                      <td className="px-6 py-4 flex items-center gap-3">
-                        <FileText className="w-5 h-5 text-blue-400" />
+                      <td className="px-4 sm:px-6 py-4 flex items-center gap-2 sm:gap-3">
                         <a
                           href={previewUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-medium text-blue-400 hover:underline"
+                          className="font-medium text-blue-400 hover:underline truncate max-w-[120px] sm:max-w-none"
                         >
-                          {file.course}
+                          {file.description}
                         </a>
                       </td>
-                      <td className="px-6 py-4 text-neutral-400">
+                      <td className="px-4 sm:px-6 py-4 text-neutral-400 whitespace-nowrap">
                         {new Date(file.$createdAt).toLocaleDateString("en-IN")}
                       </td>
-                      <td className="px-6 py-4 text-neutral-400">
-                        {file.uploader || "Unknown"}
-                      </td>
-                      <td className="px-6 py-4">
+                      <td className="px-4 sm:px-6 py-4">
                         <a
                           href={downloadUrl}
-                          className="bg-orange-500 hover:bg-orange-600 px-3 py-1 rounded text-sm"
+                          className="bg-orange-500 hover:bg-orange-600 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
                         >
                           Download
                         </a>
@@ -104,10 +95,12 @@ function CourseFilesPage() {
               </tbody>
             </table>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
-  );
+  </div>
+);
+
 }
 
 export default CourseFilesPage;

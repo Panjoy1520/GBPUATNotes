@@ -1,16 +1,16 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 
 
-export default function TopBar() {
+export default function TopBar({place}) {
 
   const navigate = useNavigate();
 
   return (
     <nav className="bg-neutral-700 md:bg-neutral-900 px-4 py-3 flex justify-between items-center">
       <div className="flex items-center gap-3">
-        <h2 className="text-xl font-semibold">Home</h2>
+        <h2 className="text-xl font-semibold">{place}</h2>
       </div>
 
       <div className="flex items-center gap-4">
@@ -22,13 +22,14 @@ export default function TopBar() {
         </button>
 
         {/* Favorites Button */}
-        <a
-          href="#favorites" 
+        <Link to="/home/favourite">
+        <div
           className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg font-medium cursor-pointer"
         >
           ❤️
           Favorites
-        </a>
+        </div>
+        </Link>
       </div>
     </nav>
   )

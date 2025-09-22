@@ -7,20 +7,20 @@ export default function Sidebar({ isOpen }) {
       ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
     >
       <div>
-        <ul className="space-y-4">
-          <Link to = '/home'><li className="cursor-pointer hover:text-orange-400 m-y-5">🏠 Home</li></Link>
-          <Link><li className="cursor-pointer hover:text-orange-400 gap-y-5">❤️ Favourite</li></Link>
-          <Link to = "/home/uploadform"><li className="cursor-pointer hover:text-orange-400 py-4">⬆ Upload files</li></Link>
-        </ul>
+        <div className="space-y-4 gap-y-2">
+          <Link to = '/home'><div className="text-white cursor-pointer hover:text-orange-400 py-1">🏠 Home</div></Link>
+          <Link to='/home/favourite'><div className="text-white cursor-pointer hover:text-orange-400 py-1">❤️ Favourite</div></Link>
+          <Link to = "/home/uploadform"><div className="text-white cursor-pointer hover:text-orange-400 py-1">⬆ Upload files</div></Link>
+        </div>
 
         <h4 className="mt-8 text-sm text-gray-400">Colleges</h4>
         <ul className="space-y-4 mt-2">
-          <Link to="/home/COT"><li className="cursor-pointer hover:text-orange-400">📙 COT </li></Link>       
-          <Link to ="/home/CBSH">  <li className="cursor-pointer hover:text-orange-400">📙 CBSH</li></Link>
-          <Link to="/home/COF"><li className="cursor-pointer hover:text-orange-400">📙 COF</li></Link>        
-          <Link to="/home/CoVaSc"><li className="cursor-pointer hover:text-orange-400">📙 CoVaSc</li></Link>
-          <Link to="/home/CoCS"><li className="cursor-pointer hover:text-orange-400">📙 CoCS</li></Link>         
-          <Link to="/home/COA"><li className="cursor-pointer hover:text-orange-400">📙 COA</li></Link>      </ul>
+          <Link to="/home/COT"><li className="text-white cursor-pointer hover:text-orange-400">📙 COT </li></Link>       
+          <Link to ="/home/CBSH">  <li className="text-white cursor-pointer hover:text-orange-400">📙 CBSH</li></Link>
+          <Link to="/home/COF"><li className="text-white cursor-pointer hover:text-orange-400">📙 COF</li></Link>        
+          <Link to="/home/COVAS"><li className="text-white cursor-pointer hover:text-orange-400">📙 CoVaSc</li></Link>
+          <Link to="/home/COCS"><li className="text-white cursor-pointer hover:text-orange-400">📙 CoCS</li></Link>         
+          <Link to="/home/COA"><li className="text-white cursor-pointer hover:text-orange-400">📙 COA</li></Link>      </ul>
       </div>
 
       

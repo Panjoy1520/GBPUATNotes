@@ -15,7 +15,7 @@ export default function YearPage() {
 
   const yearItems = years.map((year) => ({
     icon: defaulticon,
-    title: `${year}st year `,
+    title: `${year} year `,
     link: `/home/${collegevalue}/${branchvalue}/${year}`,
   }));
 

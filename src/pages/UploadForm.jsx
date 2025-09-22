@@ -109,42 +109,15 @@ function UploadForm() {
               <option value="" disabled selected hidden>
                 Select Year
               </option>
-              <option value="1">1st Year</option>
-              <option value="2">2nd Year</option>
-              <option value="3">3rd Year</option>
-              <option value="4">4th Year</option>
+              <option value="1st">1st Year</option>
+              <option value="2nd">2nd Year</option>
+              <option value="3rd">3rd Year</option>
+              <option value="4th">4th Year</option>
             </select>
             {errors.year && (
               <p className="text-red-400 text-sm">{errors.year.message}</p>
             )}
           </div>
-
-          {/* Semester Dropdown (not needed as of now )*/}
-          {/* <div>
-            <label className="block text-sm font-medium text-gray-300">
-              Semester
-            </label>
-            <select
-              {...register("semester", { required: "Semester is required" })}
-              className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
-              placeholder="Select semester"
-            >
-              <option value="" disabled selected hidden>
-                Select Semester
-              </option>
-              <option value="1">1st Semester</option>
-              <option value="2">2nd Semester</option>
-              <option value="3">3rd Semester</option>
-              <option value="4">4th Semester</option>
-              <option value="5">5th Semester</option>
-              <option value="6">6th Semester</option>
-              <option value="7">7th Semester</option>
-              <option value="8">8th Semester</option>
-            </select>
-            {errors.semester && (
-              <p className="text-red-400 text-sm">{errors.semester.message}</p>
-            )}
-          </div> */}
 
           {/* Branches Dropdown */}
 
@@ -205,8 +178,8 @@ function UploadForm() {
             <input
               {...register("description", { required: "description is required" ,
                 maxLength:{
-                  value:30,
-                  message:"Description cannot exceed 30 letters"
+                  value:50,
+                  message:"Description cannot exceed 50 letters"
                 },
               })}
               className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"

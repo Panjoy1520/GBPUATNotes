@@ -19,7 +19,7 @@ export default function Home() {
     <div className="flex bg-neutral-900 text-white min-h-screen">
       <SideBar  />
       <div className="flex flex-col flex-1">
-        <TopBar/>
+        <TopBar place={"Home"}/>
         <main className="overflow-y-auto">
 
           <CardGrid title="Sort By Colleges" items={collegeItems} />

@@ -17,10 +17,10 @@ const branches = [{
             {branch_name:"CBSH ki koi Branch", branch_value:"CBSH"}
         ]
     },{
-        college_value :"CoVaSc",
+        college_value :"COVAS",
         college_name : "College of Veterinary and Animal sciences",
         branches:[
-            {branch_name:"CoVaSc ki koi branch",branch_value:"CoVaSc"}
+            {branch_name:"CoVaSc ki koi branch",branch_value:"COVAS"}
         ]
     },{
         college_value:"COCS",

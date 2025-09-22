@@ -13,6 +13,7 @@ import Root from './components/Root';
 import ProtectedRoute from './components/ProtectedRoute';
 import ContactUs from './pages/ContactUs';
 import AboutSection from './pages/About';
+import FavouritePage from './pages/FavouritePage'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         </Route>
         <Route path='/contactus' element={<ContactUs/>}/>
         <Route path='/about' element={<AboutSection/>}/>
+        <Route path='/home/favourite' element={<FavouritePage/>}/>
       
       
     </Routes>
