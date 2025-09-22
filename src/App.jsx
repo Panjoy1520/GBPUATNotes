@@ -31,10 +31,9 @@ function App() {
         <Route path="/home/:collegevalue/:branchvalue/:year" element={<CoursePage />} />
         <Route path="/home/:collegevalue/:branchvalue/:year/:courseCode" element={<CourseFilespage />} />
         <Route element={<ProtectedRoute />}>
-       
+        <Route path="/home/uploadform" element={<UploadForm />} />
         <Route path='/home/favourite' element={<FavouritePage/>}/>
         </Route>
-         <Route path="/home/uploadform" element={<Root/>} />
         <Route path='/contactus' element={<ContactUs/>}/>
         <Route path='/about' element={<AboutSection/>}/>
         

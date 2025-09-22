@@ -2,8 +2,6 @@ import { Navigate } from "react-router-dom";
 import Heropage from "../pages/Heropage";
 import { useState, useEffect } from "react";
 import authService from "../appwrite/auth";
-import UploadForm from "../pages/UploadForm";
-import LoginComponent from "./LoginComponent";
 
 const Root = ()=>{
     const [status , setStatus] = useState('loading');
@@ -22,9 +20,9 @@ const Root = ()=>{
 
     },[])
     if (status==='authenticated'){
-        return <UploadForm/>
+        return <Navigate to="/home"/>
     }
-    return <LoginComponent/>;
+    return <Heropage/>;
 }
 
 export default Root;
