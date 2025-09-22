@@ -34,7 +34,7 @@ function App() {
        
         <Route path='/home/favourite' element={<FavouritePage/>}/>
         </Route>
-         <Route path="/home/uploadform" element={<Root/>} />
+        <Route path="/home/uploadform" element={<Root/>} />
         <Route path='/contactus' element={<ContactUs/>}/>
         <Route path='/about' element={<AboutSection/>}/>
         
