@@ -1,4 +1,4 @@
-import { div } from 'motion/react-client';
+// import { div } from 'motion/react-client';
 import React from 'react';
 import HeroNav from '../components/Heronav/HeroNav';
 import Footer from '../components/Footer';

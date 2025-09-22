@@ -14,31 +14,31 @@ const branches = [{
         college_value: "CBSH",
         college_name: "College of Basic Science and Humanities",
         branches:[
-            {branch_name:"CBSH ki koi Branch", branch_value:"CBSH1"}
+            {branch_name:"CBSH ki koi Branch", branch_value:"CBSH"}
         ]
     },{
         college_value :"CoVaSc",
         college_name : "College of Veterinary and Animal sciences",
         branches:[
-            {branch_name:"CoVaSc ki koi branch",branch_value:"CoVaSc1"}
+            {branch_name:"CoVaSc ki koi branch",branch_value:"CoVaSc"}
         ]
     },{
         college_value:"COCS",
         college_name:"College of Community Science",
         branches:[
-            {branch_name:"COCS ki koi Brannch", branch_value:"COCS1"}
+            {branch_name:"COCS ki koi Brannch", branch_value:"COCS"}
         ]
     },{
         college_value:"COF",
         college_name:"College of Fisheries",
         branches:[
-            {branch_name:"COF ki koi branch", branch_value:"COF1"}
+            {branch_name:"COF ki koi branch", branch_value:"COF"}
         ]
     },{
         college_value:"COA",
         college_name:"College of Agriculture",
         branches : [
-            {branch_name:"COA ki koi branch", branch_value:"COA1"}
+            {branch_name:"COA ki koi branch", branch_value:"COA"}
         ]
     }
 
