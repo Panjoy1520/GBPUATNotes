@@ -8,8 +8,8 @@ function FavouritePage() {
           <SideBar  />
           <div className="flex flex-col flex-1">
             <TopBar place={"Favourites"}/>
-            <main className=" overflow-y-auto">
-              <h1 className='text-center text-2xl'>Coming soon...</h1>
+            <main className=" overflow-y-auto py-5">
+              <h1 className='text-center text-3xl text-neutral-400'>Coming soon...</h1>
             </main>
           </div>
         </div>

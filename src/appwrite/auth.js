@@ -8,7 +8,7 @@ export class AuthService {
     this.client
       .setEndpoint(envconfig.appwriteEndpoint)
       .setProject(envconfig.appwriteProjectId)
-      .setDevKey(envconfig.appwriteDevKey);
+      // .setDevKey(envconfig.appwriteDevKey);
 
     this.account = new Account(this.client);
   }

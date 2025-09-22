@@ -32,10 +32,11 @@ function App() {
         <Route path="/home/:collegevalue/:branchvalue/:year/:courseCode" element={<CourseFilespage />} />
         <Route element={<ProtectedRoute />}>
         <Route path="/home/uploadform" element={<UploadForm />} />
+        <Route path='/home/favourite' element={<FavouritePage/>}/>
         </Route>
         <Route path='/contactus' element={<ContactUs/>}/>
         <Route path='/about' element={<AboutSection/>}/>
-        <Route path='/home/favourite' element={<FavouritePage/>}/>
+        
       
       
     </Routes>
