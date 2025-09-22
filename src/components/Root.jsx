@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 import authService from "../appwrite/auth";
 import UploadForm from "../pages/UploadForm";
 import LoginComponent from "./LoginComponent";
+import { div } from "motion/react-client";
 
 const Root = ()=>{
     const [status , setStatus] = useState('loading');
+   const Loader = () => <div class="fixed inset-0 z-50 flex items-center justify-center bg-black-900 bg-opacity-75">
+  <div class="h-16 w-16 animate-spin rounded-full border-4 border-solid border-amber-500 border-t-transparent"></div>
+</div>;
 
     useEffect(()=>{
         authService.getcurrentUser().then(userData=>{
@@ -21,6 +25,9 @@ const Root = ()=>{
         })
 
     },[])
+    if (status == "loading"){
+        return <Loader/>
+    }
     if (status==='authenticated'){
         return <UploadForm/>
     }
