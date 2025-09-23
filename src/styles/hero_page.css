@@ -1,0 +1,54 @@
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+  50% { transform: scale(1.05) rotate(2deg); }
+  70% { transform: scale(0.9) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(249, 115, 22, 0.8), 0 0 40px rgba(249, 115, 22, 0.3); }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.bg-gradient-animated {
+  background: linear-gradient(-45deg, #f97316, #ea580c, #dc2626, #b91c1c);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
