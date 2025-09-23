@@ -15,7 +15,7 @@ const Root = ()=>{
         authService.getcurrentUser().then(userData=>{
             if(userData.emailVerification == true){
                 setStatus('authenticated')
-                console.log(userData);
+                // console.log(userData);
                 
             }else{
                 setStatus('unauthenticated')
