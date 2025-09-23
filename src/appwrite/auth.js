@@ -35,7 +35,7 @@ export class AuthService {
 
   async startVerification() {
     try {
-      await this.account.createVerification("http://localhost:5173/verify"); //TODO: change this URL to your frontend URL
+      await this.account.createVerification("https://gbpuatnotes.app/verify"); //TODO: change this URL to your frontend URL
       console.log("verification email sent successfully");
     } catch (error) {
       console.log("Appwrite service :: startVerification :: error", error);
