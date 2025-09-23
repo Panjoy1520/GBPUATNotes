@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import authService from "../appwrite/auth";
 import UploadForm from "../pages/UploadForm";
 import LoginComponent from "./LoginComponent";
-import { div } from "motion/react-client";
 
 const Root = ()=>{
     const [status , setStatus] = useState('loading');
@@ -14,8 +13,10 @@ const Root = ()=>{
 
     useEffect(()=>{
         authService.getcurrentUser().then(userData=>{
-            if(userData){
+            if(userData.emailVerification == true){
                 setStatus('authenticated')
+                console.log(userData);
+                
             }else{
                 setStatus('unauthenticated')
             }
