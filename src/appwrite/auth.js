@@ -80,8 +80,8 @@ export class AuthService {
     try {
       this.account.createOAuth2Session(
         "google",
-        "http://localhost:5173/verify",
-        "http://localhost:5173/failed"
+        "http://localhost:5173/home/oauthverify", //TODO: change this URL to your frontend URL
+        "http://localhost:5173/oauthfailed"  //TODO: make this page and change this URL to your frontend URL
       );
     } catch (error) {
       console.log("Appwrite service :: oAuth2Login :: error", error);

@@ -14,6 +14,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ContactUs from './pages/ContactUs';
 import AboutSection from './pages/About';
 import FavouritePage from './pages/FavouritePage'
+import EmailPage from './pages/EmailPage';
+import oAuthVerifypage from './pages/oAuthverifypage';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <Route path="/" element={<Heropage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/verify" element={<Verifypage />} />
+      <Route path = "/home/oauthverify" element = {<oAuthVerifypage/>}/> //TODO: add o auth feature 
 
      
       
@@ -35,6 +38,7 @@ function App() {
         <Route path='/home/favourite' element={<FavouritePage/>}/>
         </Route>
         <Route path="/home/uploadform" element={<Root/>} />
+        <Route path = "/home/emailpage" element = {<EmailPage/>} />
         <Route path='/contactus' element={<ContactUs/>}/>
         <Route path='/about' element={<AboutSection/>}/>
         

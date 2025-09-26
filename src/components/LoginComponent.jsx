@@ -42,9 +42,9 @@ function LoginComponent() {
       dispatch(signupUser({ email: data.email, password: data.password }))
         .unwrap()
         .then(() => {
-          navigate("/home");
-
+          navigate("/home/emailpage")
         })
+        
         .catch((err) => {
           console.error("Signup failed:", err);
         });
