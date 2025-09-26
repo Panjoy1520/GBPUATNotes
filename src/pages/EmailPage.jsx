@@ -18,7 +18,7 @@ function EmailPage() {
 
         {/* Message */}
         <p className="text-gray-300 text-sm mb-6">
-          We have sent a verification link to you email address. <br />
+          We have sent a verification link to your email address. <br />
           Please click the link to open your gmail and continue.
         </p>
 
