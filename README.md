@@ -30,6 +30,12 @@ Built with **React**, **TailwindCSS**, and **Appwrite** for secure authenticatio
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/gbpuatnotes.git
+git clone https://github.com/Panjoy1520/gbpuatnotes.git
 cd gbpuatnotes
 npm install
+npm run dev (to start the server)
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [](CONTRIBUTING.md) for detailed instructions.
+
