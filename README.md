@@ -37,5 +37,5 @@ npm run dev (to start the server)
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [](CONTRIBUTING.md) for detailed instructions.
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
 
