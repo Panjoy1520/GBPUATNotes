@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail } from "lucide-react"; // optional icon for nice UI
+import { Mail, AlertTriangle } from "lucide-react"; // added AlertTriangle
 
 function EmailPage() {
   const navigate = useNavigate();
@@ -17,10 +17,19 @@ function EmailPage() {
         </h2>
 
         {/* Message */}
-        <p className="text-gray-300 text-sm mb-6">
+        <p className="text-gray-300 text-sm mb-4">
           We have sent a verification link to your email address. <br />
-          Please click the link to open your gmail and continue.
+          Please click the link to open your Gmail and continue.
         </p>
+
+        {/* Alert Section */}
+        <div className="flex items-start p-3 mb-6 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm text-left">
+          <AlertTriangle className="w-5 h-5 mr-2 mt-[2px] flex-shrink-0" />
+          <span>
+            It may take <strong>5–10 minutes</strong> for the verification email to reach
+            your inbox. Please be patient and check your spam folder if you don't see it.
+          </span>
+        </div>
 
         {/* Go to Email Button */}
         <a
