@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import { useDispatch, useSelector } from "react-redux";
+import { Eye, EyeOff } from "lucide-react";
+
 import {
   initAuth,
   loginUser,
@@ -25,6 +27,9 @@ function LoginComponent() {
 
   const { status, error, isAuthenticated, user } = useSelector(selectAuth);
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const [isLogin, setIsLogin] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -42,9 +47,9 @@ function LoginComponent() {
       dispatch(signupUser({ email: data.email, password: data.password }))
         .unwrap()
         .then(() => {
-          navigate("/home/emailpage")
+          navigate("/home/emailpage");
         })
-        
+
         .catch((err) => {
           console.error("Signup failed:", err);
         });
@@ -66,8 +71,11 @@ function LoginComponent() {
           <p className="text-sm">
             🔒 You need to{" "}
             <span className="font-semibold">Login / Signup </span>
-            with <span className="font-semibold text-orange-500">college E-mail id</span>
-            {" "}to upload notes and use the favourites page.
+            with{" "}
+            <span className="font-semibold text-orange-500">
+              college E-mail id
+            </span>{" "}
+            to upload notes and use the favourites page.
           </p>
         </div>
         <div className="bg-neutral-800 shadow-lg rounded-xl p-8 w-full max-w-md">
@@ -112,17 +120,26 @@ function LoginComponent() {
               <label className="block text-sm font-medium text-neutral-300">
                 Password
               </label>
-              <input
-                type="password"
-                {...register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 8,
-                    message: "Password must have at least 8 characters",
-                  },
-                })}
-                className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 8,
+                      message: "Password must have at least 8 characters",
+                    },
+                  })}
+                  className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-orange-400 hover:cursor-pointer"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
               {errors.password && (
                 <p className="text-red-400 text-sm">
                   {errors.password.message}
@@ -136,15 +153,29 @@ function LoginComponent() {
                 <label className="block text-sm font-medium text-neutral-300">
                   Confirm Password
                 </label>
-                <input
-                  type="password"
-                  {...register("confirmPassword", {
-                    required: "Confirm password is required",
-                    validate: (value, formValues) =>
-                      value === formValues.password || "Passwords do not match",
-                  })}
-                  className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
-                />
+                <div className="relative">
+                  <input
+                    type={showConfirmPassword ? "text" : "password"}
+                    {...register("confirmPassword", {
+                      required: "Confirm password is required",
+                      validate: (value, formValues) =>
+                        value === formValues.password ||
+                        "Passwords do not match",
+                    })}
+                    className="mt-1 block w-full border border-neutral-600 bg-neutral-700 text-white rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 pr-10"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-orange-400 hover:cursor-pointer"
+                  >
+                    {showConfirmPassword ? (
+                      <EyeOff size={18} />
+                    ) : (
+                      <Eye size={18} />
+                    )}
+                  </button>
+                </div>
                 {errors.confirmPassword && (
                   <p className="text-red-400 text-sm">
                     {errors.confirmPassword.message}
