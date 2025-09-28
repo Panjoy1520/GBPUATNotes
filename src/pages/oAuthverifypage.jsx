@@ -1,35 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import authService from "../appwrite/auth";
 
-function oAuthVerifypage() {
+function OauthVerifypage() {
   const navigate = useNavigate();
-  const [status, setStatus] = useState("verifying"); 
-  const email = 
+  const [status, setStatus] = useState("verifying");
 
-  
   useEffect(() => {
-    async function verifyEmail() {
+    const checkUserVerification = async () => {
       try {
-        const user = await authService.getcurrentUser()
+        const user = await authService.getcurrentUser();
+        console.log("Fetched User:", user);
 
-        if (user.email === regex.test(email)) {
-          await authService.completeVerification(userId, secret);
+        if (!user) {
+          console.warn("No active user session found!");
+          setStatus("error");
+          return;
+        }
+
+        if (user.emailVerification && user.email.endsWith("@gbpuat.ac.in")) {
           setStatus("success");
-
-          setTimeout(() => {
-            navigate("/home");
-          }, 5000); 
+          setTimeout(() => navigate("/home"), 5000);
         } else {
           setStatus("error");
         }
       } catch (error) {
-        console.error("Verification failed:", error);
+        console.error("Error fetching user:", error);
         setStatus("error");
       }
-    }
-    verifyEmail();
-  }, [userId, secret, navigate]);
+    };
+
+    checkUserVerification();
+  }, [navigate]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-neutral-900">
@@ -64,7 +66,7 @@ function oAuthVerifypage() {
               Verification Failed
             </h2>
             <p className="text-gray-300 text-sm">
-              Invalid or expired link. Please try again.
+              Please log in again with a verified @gbpuat.ac.in email.
             </p>
           </div>
         )}
@@ -73,4 +75,4 @@ function oAuthVerifypage() {
   );
 }
 
-export default oAuthVerifypage;
+export default OauthVerifypage;

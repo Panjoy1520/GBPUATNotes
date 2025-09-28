@@ -76,11 +76,12 @@ export class AuthService {
     }
   }
 
+  // oauth2 login with google in development
   async oAuth2Login() {
     try {
       this.account.createOAuth2Session(
         "google",
-        "http://localhost:5173/home/oauthverify", //TODO: change this URL to your frontend URL
+        "http://localhost:5173/home/uploadform", //TODO: change this URL to your frontend URL
         "http://localhost:5173/oauthfailed"  //TODO: make this page and change this URL to your frontend URL
       );
     } catch (error) {

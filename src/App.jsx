@@ -15,7 +15,7 @@ import ContactUs from './pages/ContactUs';
 import AboutSection from './pages/About';
 import FavouritePage from './pages/FavouritePage'
 import EmailPage from './pages/EmailPage';
-import oAuthVerifypage from './pages/oAuthverifypage';
+import OauthVerifypage from './pages/oAuthverifypage';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<Heropage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/verify" element={<Verifypage />} />
-      <Route path = "/home/oauthverify" element = {<oAuthVerifypage/>}/> //TODO: add o auth feature 
+      <Route path = "/home/oauthverify" element = {<OauthVerifypage/>}/> //TODO: add o auth feature 
 
      
       

@@ -172,12 +172,12 @@ function LoginComponent() {
           {/* Divider */}
           <div className="flex items-center my-6">
             <hr className="flex-1 border-neutral-600" />
-            <span className="px-2 text-neutral-300 text-sm">or</span>
+            <span className="px-2 text-neutral-300 text-sm "></span>
             <hr className="flex-1 border-neutral-600" />
           </div>
 
           {/* Google Button */}
-          <button
+          {/* <button
             className="w-full flex items-center justify-center space-x-2 border border-neutral-600 bg-neutral-700 py-2 px-4 rounded-md hover:bg-neutral-600 transition"
             onClick={() => googleLogin()}
           >
@@ -187,7 +187,7 @@ function LoginComponent() {
               className="w-5 h-5"
             />
             <span className="text-white">Sign in with Google</span>
-          </button>
+          </button> */}
 
           {/* Toggle Button */}
           <p className="mt-6 text-center text-sm text-gray-300">

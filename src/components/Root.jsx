@@ -13,7 +13,7 @@ const Root = ()=>{
 
     useEffect(()=>{
         authService.getcurrentUser().then(userData=>{
-            if(userData.emailVerification == true && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userData.email)){
+            if(userData && userData.emailVerification && userData.email.endsWith("@gbpuat.ac.in")){
                 setStatus('authenticated')
                 console.log(userData);
                 
