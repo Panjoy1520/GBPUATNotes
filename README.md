@@ -1,12 +1,35 @@
-# React + Vite
+# 📚 gbpuatnotes – College Notes Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive platform for sharing, saving, and exploring notes for GBPUAT students.  
+Built with **React**, **TailwindCSS**, and **Appwrite** for secure authentication and smooth performance.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔑 **College Email Login** – Only `@gbpuat.ac.in` emails can sign up  
+- ✅ **Email Verification** – Users must verify email before accessing key features  
+- 📂 **Upload Notes** – Share important study material with your peers  
+- ❤️ **Favourites Page** – Save and quickly access your go-to notes  
+- 🔍 **Search & Filter** – Find exactly what you need  
+- 🎨 **Modern UI** – Dark mode, responsive design, and minimal aesthetic  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + TailwindCSS  
+- **Backend:** Appwrite  
+- **State Management:** Redux Toolkit  
+- **Icons:** Lucide React  
+
+---
+
+## 📦 Installation & Setup
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/gbpuatnotes.git
+cd gbpuatnotes
+npm install
