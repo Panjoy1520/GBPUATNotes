@@ -20,25 +20,25 @@ const branches = [{
         college_value :"COVAS",
         college_name : "College of Veterinary and Animal sciences",
         branches:[
-            {branch_name:"CoVaSc ki koi branch",branch_value:"COVAS"}
+            {branch_name:"College of veterinary",branch_value:"COVAS"}
         ]
     },{
         college_value:"COCS",
         college_name:"College of Community Science",
         branches:[
-            {branch_name:"COCS ki koi Brannch", branch_value:"COCS"}
+            {branch_name:"College of community Science", branch_value:"COCS"}
         ]
     },{
         college_value:"COF",
         college_name:"College of Fisheries",
         branches:[
-            {branch_name:"COF ki koi branch", branch_value:"COF"}
+            {branch_name:"College of fisheries", branch_value:"COF"}
         ]
     },{
         college_value:"COA",
         college_name:"College of Agriculture",
         branches : [
-            {branch_name:"COA ki koi branch", branch_value:"COA"}
+            {branch_name:"College of Agriculture", branch_value:"COA"}
         ]
     }
 
