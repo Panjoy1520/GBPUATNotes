@@ -15,6 +15,8 @@ const courses = [
   { course_code: "TEE-104", course_name: "TEE-104 BASIC ELECTRICAL ENGINEERING",course_branch:"IT",course_year:"1st",course_college:"COT" },
   { course_code: "TIP-103", course_name: "TIP-103 WORKSHOP PRACTICES" ,course_branch:"IT",course_year:"1st",course_college:"COT"},
   { course_code: "TIT-121", course_name: "TIT-121 PROGRAMMING FOR PROBLEM SOLVING",course_branch:"IT",course_year:"1st",course_college:"COT" },
+
+  //SECOND YEAR
   { course_code: "TIT-233", course_name: "TIT-233 DATA STRUCTURES" ,course_branch:"IT",course_year:"2nd",course_college:"COT"},
   { course_code: "TIT-234", course_name: "TIT-234 FOUNDATIONS OF INFORMATION TECHNOLOGY" ,course_branch:"IT",course_year:"1st",course_college:"COT"},
   { course_code: "TIT-235", course_name: "TIT-235 FORMAL LANGUAGE & AUTOMATA THEORY" ,course_branch:"IT",course_year:"2nd",course_college:"COT"},
@@ -23,7 +25,7 @@ const courses = [
   { course_code: "TIT-243", course_name: "TIT-243 OPERATING SYSTEMS",course_branch:"IT",course_year:"2nd",course_college:"COT" },
   { course_code: "TIT-244", course_name: "TIT-244 OBJECT ORIENTED PROGRAMMING" ,course_branch:"IT",course_year:"2nd",course_college:"COT"},
 
-  //
+  //THIRD YEAR 
   { course_code: "TIT-351", course_name: "TIT-351 DATABASE MANAGEMENT SYSTEMS" ,course_branch:"IT",course_year:"3rd",course_college:"COT"},
   { course_code: "TIT-352", course_name: "TIT-352 JAVA PROGRAMMING",course_branch:"IT",course_year:"3rd",course_college:"COT" },
   { course_code: "TIT-353", course_name: "TIT-353 DESIGN & ANALYSIS OF ALGORITHMS",course_branch:"IT",course_year:"3rd",course_college:"COT" },
