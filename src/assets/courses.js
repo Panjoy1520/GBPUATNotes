@@ -22,6 +22,8 @@ const courses = [
   { course_code: "TIT-242", course_name: "TIT-242 COMPUTER ORGANIZATION" ,course_branch:"IT",course_year:"2nd",course_college:"COT"},
   { course_code: "TIT-243", course_name: "TIT-243 OPERATING SYSTEMS",course_branch:"IT",course_year:"2nd",course_college:"COT" },
   { course_code: "TIT-244", course_name: "TIT-244 OBJECT ORIENTED PROGRAMMING" ,course_branch:"IT",course_year:"2nd",course_college:"COT"},
+
+  //
   { course_code: "TIT-351", course_name: "TIT-351 DATABASE MANAGEMENT SYSTEMS" ,course_branch:"IT",course_year:"3rd",course_college:"COT"},
   { course_code: "TIT-352", course_name: "TIT-352 JAVA PROGRAMMING",course_branch:"IT",course_year:"3rd",course_college:"COT" },
   { course_code: "TIT-353", course_name: "TIT-353 DESIGN & ANALYSIS OF ALGORITHMS",course_branch:"IT",course_year:"3rd",course_college:"COT" },
@@ -29,12 +31,16 @@ const courses = [
   { course_code: "TIT-363", course_name: "TIT-363 MODERN TRENDS IN INFORMATION TECHNOLOGY",course_branch:"IT",course_year:"3rd",course_college:"COT" },
   { course_code: "TIT-364", course_name: "TIT-364 COMPUTER NETWORKS",course_branch:"IT",course_year:"3rd",course_college:"COT" },
   { course_code: "TIT-365", course_name: "TIT-365 WEB AND INTERNET TECHNOLOGY" ,course_branch:"IT",course_year:"3rd",course_college:"COT"},
-  { course_code: "TIT-483", course_name: "TIT-483 COMPUTER SYSTEM SECURITY" },
-  { course_code: "TIT-484", course_name: "TIT-484 IT WORKSHOP" },
-  { course_code: "TIT-486", course_name: "TIT-486 OPEN SOURCE SYSTEMS" },
-  { course_code: "TIT-492", course_name: "TIT-492 SEMINAR" },
-  { course_code: "TIT-495A", course_name: "TIT-495A PROJECT-I" },
-  { course_code: "TIT-495B", course_name: "TIT-495B PROJECT-II" },
+
+  //FINAL YEAR 
+  { course_code: "TIT-483", course_name: "TIT-483 COMPUTER SYSTEM SECURITY",course_branch:"IT",course_year:"4th",course_college:"COT"},
+  { course_code: "TIT-484", course_name: "TIT-484 IT WORKSHOP",course_branch:"IT",course_year:"4th",course_college:"COT" },
+  { course_code: "TIT-410", course_name: "TIT-410 MACHINE LEARNING",course_branch:"IT",course_year:"4th",course_college:"COT" },
+  { course_code: "TIT-401", course_name: "TIT-401 EMBEDDED SYSTEMS",course_branch:"IT",course_year:"4th",course_college:"COT" },
+  { course_code: "TIT-486", course_name: "TIT-486 OPEN SOURCE SYSTEMS",course_branch:"IT",course_year:"4th",course_college:"COT" },
+  { course_code: "TIT-492", course_name: "TIT-492 SEMINAR",course_branch:"IT",course_year:"4th",course_college:"COT" },
+  { course_code: "TIT-495A", course_name: "TIT-495A PROJECT-I" ,course_branch:"IT",course_year:"4th",course_college:"COT"},
+  { course_code: "TIT-495B", course_name: "TIT-495B PROJECT-II",course_branch:"IT",course_year:"4th",course_college:"COT" },
   { course_code: "TME-109", course_name: "TID/TSW/TCE/TME-109 INTRODUCTION TO ENVIRONMENTAL ENGINEERING AND DISASTER MANAGEMENT" },
 
 
